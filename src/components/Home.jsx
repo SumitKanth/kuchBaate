@@ -4,7 +4,7 @@ import sentMusic from '../assets/music/sent.mp3';
 import recvMusic from '../assets/music/rece.mp3'; 
 
 const Home = () => {
-  const socket = useMemo(() => io("http://localhost:3000",{withCredentials: true,}), []);
+  const socket = useMemo(() => io("https://kuchbaatebackend.onrender.com",{withCredentials: true,}), []);
   
   const messages_talk = document.getElementById('messages_talk');
   const user_msg = document.createElement('div');
@@ -85,7 +85,7 @@ const Home = () => {
 
         <form onSubmit={submitHandler} className="input_form">
           <input type="text" value={msg} placeholder="Bol do jo bolna h...." onChange={(e) => setMsg(e.target.value)}/>
-          <button type="submit" className="btn">Submit</button>
+          <button type="submit" className="btn">Send</button>
         </form>
       </div>
     </>
