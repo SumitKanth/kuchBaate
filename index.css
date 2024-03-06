@@ -1,0 +1,71 @@
+*{
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #fff;
+}
+
+.head{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5rem;
+}
+
+.head h2{    
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2rem;
+}
+
+#messages_talk{
+    overflow-y: auto;
+    height: 30rem;
+    width: 30rem;
+    margin: auto;
+    margin-top: 1rem;
+    box-shadow: 4px 4px 150px 4px rgba(44, 208, 19, 0.2);
+    border: 1px solid rgba(44, 208, 19, 0.2);
+    border-radius: 20px;
+}
+
+#messages_talk .other_msg{
+    width: 100%;
+    text-align: right;
+    padding: 0 1rem;
+}
+
+#messages_talk .user_msg{
+    width: 100%;
+    padding: .4rem 1rem;
+}
+
+.input_form{
+    width: 30rem;
+    margin: auto;
+}   
+
+.input_form input{
+    padding: .5rem 1.5rem;
+    border: 2px solid #808080;
+    border-radius: 50px;
+}
+
+.input_form .btn{
+    border: 2px solid #808080;
+    padding: .5rem 1.4rem;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-left: 1rem;
+}
+
+@media only screen and (max-width: 580px){
+
+    #messages_talk{
+        width: 21rem;
+    }
+
+    .input_form{
+        width: 21rem;
+    }
+}
