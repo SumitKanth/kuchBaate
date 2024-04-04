@@ -10,6 +10,7 @@ const Home = () => {
   const user_msg = document.createElement('div');
   const other_msg = document.createElement('div');
   user_msg.classList.add('user_msg');
+  user_msg.style.textAlign = "right"
   other_msg.classList.add('other_msg');
   const [messages, setMessages] = useState([]);
   const [msg, setMsg] = useState("");
@@ -26,7 +27,6 @@ const Home = () => {
                 <p>${msg}</p>
                 `;
     user_msg.innerHTML = user;
-    console.log('In user: ', messages_talk);
     messages_talk.appendChild(user_msg);
     let sentMusicPlay = new Audio(sentMusic);
     sentMusicPlay.play();
@@ -40,7 +40,6 @@ const Home = () => {
     });
 
     socket.on("all-user-message", (data) => {
-        console.log(data.name, data.msg);
         setClientName(data.name);
         setClientMsg(data.msg);
         setCallFunc(true);
@@ -59,8 +58,6 @@ const Home = () => {
     <p> ${clientMsg} </p>
     <br/>`;
       other_msg.innerHTML = client;
-      console.log('In fucn: ', other_msg);
-      console.log('Append tag: ', messages_talk)
       messages_talk.appendChild(other_msg);
       const recvMusicPlay = new Audio(recvMusic);
       recvMusicPlay.play();
